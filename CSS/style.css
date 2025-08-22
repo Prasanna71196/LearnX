@@ -1,0 +1,277 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Unusual funky gradient background */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff00cc, #3333ff);
+  color: #fff;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Navbar - sticky */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 10px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  animation: pulse 2s infinite alternate;
+}
+
+/* Course Cards */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  align-items: start; /* keep rows tidy */
+}
+
+.course-card {
+display: flex;
+flex-direction: column;
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(12px);
+border: 2px solid transparent;
+border-image: linear-gradient(45deg, #ff00cc, #3333ff) 1;
+border-radius: 12px;
+overflow: hidden;
+padding: 0; /* let inner sections handle spacing */
+text-align: center;
+transition: transform 0.4s, box-shadow 0.4s;
+box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+.course-card img {
+width: 100%;
+height: 180px; /* choose a uniform height */
+object-fit: cover; /* crop instead of stretching */
+display: block; /* remove inline gaps */
+}
+
+.course-card h3,
+.course-card p,
+.course-card .stars,
+.course-card .progress-container {
+/* padding: 10px 14px; */
+margin: 0;
+}
+
+.course-card .progress-container { margin: 8px 14px; }
+.course-card .actions { margin: 10px 14px 16px; }
+
+.course-card:hover {
+transform: translateY(-4px) rotate(-1deg);
+box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+/* Progress bar */
+.progress-container {
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+.progress {
+  height: 100%;
+  background: lime;
+  transition: width 0.3s;
+}
+
+/* Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #111, #444);
+  color: #ddd;
+}
+body.dark .course-card {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Animations */
+@keyframes pulse {
+  from { transform: scale(1);}
+  to { transform: scale(1.2);}
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar { flex-direction: column; }
+}
+
+/* Course details + login + cart */
+.course-detail, .cart, .login-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.course-detail h1, .login-form h2, .cart h2 {
+  margin-bottom: 15px;
+}
+
+.login-form input, .login-form button {
+  margin: 10px 0;
+  padding: 10px;
+  width: 80%;
+  border: none;
+  border-radius: 6px;
+}
+
+.login-form button {
+  background: #ff00cc;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.login-form button:hover {
+  background: #3333ff;
+}
+
+/* FadeIn animation */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+/* Waves */
+.wave svg {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+.wave-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Floating Shapes */
+.shapes .circle, 
+.shapes .triangle, 
+.shapes .square {
+  position: absolute;
+  opacity: 0.3;
+  animation: float 6s infinite alternate ease-in-out;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background: #ff00cc;
+  border-radius: 50%;
+  top: 20%;
+  left: 5%;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  background: #00ffff;
+  top: 60%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 60px solid #ffff00;
+  top: 40%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  from { transform: translateY(0) rotate(0);}
+  to { transform: translateY(-40px) rotate(20deg);}
+}
+
+.course-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, #ff00cc, #3333ff) 1;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.course-card:hover {
+  transform: scale(1.07) rotate(-1deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+button, .nav-link {
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover, .nav-link:hover {
+  background: linear-gradient(45deg, #00ffff, #ffff00);
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .shapes { display: none; } /* Hide shapes on small screens */
+  .wave { height: 60px; }
+}
+
+/* Enroll button inside course cards */
+.course-card .actions {
+padding: 12px 14px;
+}
+
+.course-card .enroll-btn {
+display: block;
+width: 100%;
+text-align: center;
+background: linear-gradient(45deg, #ff00cc, #3333ff);
+color: #fff;
+border-radius: 8px;
+padding: 10px 14px;
+font-weight: 700;
+text-decoration: none;
+white-space: nowrap; /* keep text on one line /
+overflow: hidden; / avoid spillover /
+text-overflow: ellipsis; / if it ever overflows */
+box-sizing: border-box;
+}
+
+.course-card .enroll-btn:hover {
+background: linear-gradient(45deg, #00ffff, #ffff00);
+transform: translateY(-2px);
+}
+
+.course-card .stars {
+display: inline-flex;
+gap: 2px;
+padding: 8px 14px;
+letter-spacing: 0;
+line-height: 1;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Courses - LearnX</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+<header class="navbar"> <a href="index.html" class="logo">📘 LearnX</a> <div class="user-pill" id="userPill"></div> <button id="logoutBtn" class="nav-link" style="display:none">Logout</button> <button id="themeToggle">🌙</button> 
+</header>
+  <!-- Top Wave Background -->
+<div class="wave wave-top">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#ff00cc" fill-opacity="0.7" 
+          d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,85.3C672,96,768,160,864,186.7C960,213,1056,203,1152,165.3C1248,128,1344,64,1392,32L1440,0L1440,320L0,320Z"></path>
+  </svg>
+</div>
+
+<div class="shapes">
+  <div class="circle"></div>
+  <div class="triangle"></div>
+  <div class="square"></div>
+</div>
+
+
+  <section class="cart">
+    <h2>My Enrolled Courses</h2>
+    <ul id="courseList"></ul>
+  </section>
+
+  <!-- Bottom Wave Background -->
+<div class="wave wave-bottom">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#3333ff" fill-opacity="0.8" 
+          d="M0,160L60,176C120,192,240,224,360,240C480,256,600,256,720,250.7C840,245,960,235,1080,202.7C1200,171,1320,117,1380,90.7L1440,64L1440,320L0,320Z"></path>
+  </svg>
+</div>
+
+ <script src="JS/auth.js"></script>
+  <script src="JS/script.js"></script>
+  <script>
+    const enrolled = JSON.parse(localStorage.getItem("enrolledCourses")) || [];
+    const list = document.getElementById("courseList");
+
+    if(enrolled.length === 0){
+      list.innerHTML = "<p>No enrolled courses yet.</p>";
+    } else {
+      enrolled.forEach(c => {
+        let li = document.createElement("li");
+        li.textContent = "📘 " + c;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

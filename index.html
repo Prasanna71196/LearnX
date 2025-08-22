@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX - Online Learning</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  
+</head>
+
+<body>
+  <!-- Top Wave Background -->
+
+
+  <!-- 🔝 Sticky Navigation -->
+  <header class="navbar">
+    <div class="logo">📘 LearnX</div> <input type="text" id="searchBar" placeholder="Search courses..." /> <select
+      id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="tech">Tech</option>
+      <option value="design">Design</option>
+    </select> <select id="levelFilter">
+      <option value="all">All Levels</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select> <select id="priceFilter">
+      <option value="all">All Prices</option>
+      <option value="free">Free</option>
+      <option value="paid">Paid</option>
+    </select>
+    <div class="user-pill" id="userPill"></div> <a href="login.html" class="nav-link"
+      id="loginLink">Login/Register</a> <button id="logoutBtn" class="nav-link" style="display:none">Logout</button> <a
+      href="cart.html" class="nav-link">🛒 Cart</a> <button id="themeToggle" title="Toggle theme">🌙</button>
+  </header> <!-- Top Wave Background -->
+  <div class="wave wave-top"> <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#ff00cc" fill-opacity="0.7"
+        d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,85.3C672,96,768,160,864,186.7C960,213,1056,203,1152,165.3C1248,128,1344,64,1392,32L1440,0L1440,320L0,320Z">
+      </path>
+    </svg> </div>
+
+  <!-- Floating Shapes -->
+  <div class="shapes">
+    <div class="circle"></div>
+    <div class="triangle"></div>
+    <div class="square"></div>
+  </div>
+  <!-- 📚 Courses -->
+  <section class="courses"> <!-- Card 1 -->
+    <div class="course-card" data-title="Python Basics" data-category="tech" data-level="beginner" data-price="free"> <a
+        href="course.html?course=Python%20Basics" class="thumb-link" aria-label="Open Python Basics"> <img
+          src="Images/python.webp" alt="Python Basics Course" /> </a>
+      <h3>Python Basics</h3>
+      <p>Instructor: Alice</p>
+      <p>Price: Free</p>
+      <div class="stars" aria-label="4 stars">⭐⭐⭐⭐</div>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <div class="actions"> <a class="enroll-btn" href="course.html?course=Python%20Basics">Enroll Now</a> </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="course-card" data-title="UI/UX Design" data-category="design" data-level="intermediate"
+      data-price="paid">
+      <a href="course.html?course=UI%2FUX%20Design" class="thumb-link" aria-label="Open UI/UX Design">
+        <img src="Images/uiux.webp" alt="UI/UX Design Course" />
+      </a>
+      <h3>UI/UX Design</h3>
+      <p>Instructor: John Doe</p>
+      <p>Price: $20</p>
+      <div class="stars" aria-label="3 stars">⭐⭐⭐</div>
+      <div class="progress-container">
+        <div class="progress" style="width:50%"></div>
+      </div>
+      <div class="actions">
+        <a class="enroll-btn" href="course.html?course=UI%2FUX%20Design">Enroll Now</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="course-card" data-title="Data Analysis" data-category="tech" data-level="beginner" data-price="paid">
+      <a href="course.html?course=Data%20Analysis" class="thumb-link" aria-label="Open Data Analysis">
+        <img src="Images/dataanalysis.png" alt="Data Analysis Course" />
+      </a>
+      <h3>Data Analysis</h3>
+      <p>Instructor: Veebha</p>
+      <p>Price: Paid</p>
+      <div class="stars" aria-label="4 stars">⭐⭐⭐⭐</div>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <div class="actions">
+        <a class="enroll-btn" href="course.html?course=Data%20Analysis">Enroll Now</a>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="course-card" data-title="Animation Design" data-category="design" data-level="beginner"
+      data-price="free">
+      <a href="course.html?course=Animation%20Design" class="thumb-link" aria-label="Open Animation Design">
+        <img src="Images/animation.png" alt="Animation Design Course" />
+      </a>
+      <h3>Animation Design</h3>
+      <p>Instructor: Swetha</p>
+      <p>Price: Free</p>
+      <div class="stars" aria-label="4 stars">⭐⭐⭐⭐</div>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <div class="actions">
+        <a class="enroll-btn" href="course.html?course=Animation%20Design">Enroll Now</a>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="course-card" data-title="AI Enhancement" data-category="tech" data-level="beginner" data-price="paid">
+      <a href="course.html?course=AI%20Enhancement" class="thumb-link" aria-label="Open AI Enhancement">
+        <img src="Images/ai.jpg" alt="AI Enhancement Course" />
+      </a>
+      <h3>AI Enhancement</h3>
+      <p>Instructor: Parsi</p>
+      <p>Price: Paid</p>
+      <div class="stars" aria-label="4 stars">⭐⭐⭐⭐</div>
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <div class="actions">
+        <a class="enroll-btn" href="course.html?course=AI%20Enhancement">Enroll Now</a>
+      </div>
+    </div>
+
+
+  </section> <!-- Bottom Wave Background -->
+  <div class="wave wave-bottom"> <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#3333ff" fill-opacity="0.8"
+        d="M0,160L60,176C120,192,240,224,360,240C480,256,600,256,720,250.7C840,245,960,235,1080,202.7C1200,171,1320,117,1380,90.7L1440,64L1440,320L0,320Z">
+      </path>
+    </svg> </div>
+    <script src="JS/auth.js"></script>
+  <script src="JS/script.js"></script>
+  
+
+
+</body>
+
+</html>

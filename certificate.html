@@ -1,0 +1,64 @@
+<!DOCTYPE html> <html lang="en"> 
+    <head> <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title>Certificate of Completion</title> 
+         <link rel="stylesheet" href="CSS/certificate.css"> 
+         
+        </head>
+         <body>
+             <main class="cert-wrap" id="certificate">
+                 <!-- Decorative corners and waves -->
+                   <div class="corner corner-tl">
+
+                   </div> <div class="corner corner-tr">
+
+                   </div> <div class="corner corner-bl">
+
+                   </div> <div class="corner corner-br">
+
+                   </div>
+
+                   <div class="wave wave-1"></div>
+<div class="wave wave-2"></div>
+
+<!-- Ribbon badge -->
+<div class="ribbon">
+  <div class="medal">
+    <span class="star">★</span>
+    <span class="star">★</span>
+    <span class="star">★</span>
+  </div>
+</div>
+
+<!-- Content -->
+<section class="content">
+  <h1 class="title">Certificate</h1>
+  <p class="subtitle">OF COMPLETION</p>
+  <p class="presented">PROUDLY PRESENTED TO</p>
+
+  <h2 class="name" id="recipientName">Recipient Name</h2>
+
+  <p class="for">FOR SUCCESSFULLY COMPLETING</p>
+  <h3 class="course" id="courseName">Course Name</h3>
+
+  <p class="desc">
+    This certificate is awarded in recognition of sustained effort and successful
+    completion of all lessons and assessments in the above course.
+  </p>
+
+  <div class="footer">
+    <div class="issuer">
+      <div class="line"></div>
+      <span>Authorized Signature</span>
+    </div>
+    <div class="date-block">
+      <span id="issueDate"></span>
+      <small>Date</small>
+    </div>
+    <div class="seal">LearnX</div>
+  </div>
+</section>
+
+</main> <div class="actions"> <button id="downloadBtn">Download PDF</button> <a class="back" href="index.html">← Back to Home</a> </div> 
+ <script src="JS/auth.js"></script>
+<script> const params = new URLSearchParams(location.search); const nameParam = params.get('name'); const courseParam = params.get('course'); const auto = params.get('auto'); const name = nameParam || localStorage.getItem('lxUserName') || 'Learner'; const course = courseParam || localStorage.getItem('lxLastCompletedCourse') || 'Course'; document.getElementById('recipientName').textContent = name; document.getElementById('courseName').textContent = course; document.getElementById('issueDate').textContent = new Date().toDateString(); const btn = document.getElementById('downloadBtn'); if (btn) { btn.addEventListener('click', () => window.print()); } if (auto === '1') { requestAnimationFrame(() => setTimeout(() => window.print(), 300)); } </script></body> </html>

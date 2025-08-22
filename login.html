@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - LearnX</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <header class="navbar"> <a href="index.html" class="logo">📘 LearnX</a>
+    <div class="user-pill" id="userPill"></div> <a href="register.html" class="nav-link"
+      id="loginLink">Register</a> <button id="logoutBtn" class="nav-link" style="display:none">Logout</button>
+  </header>
+  <div class="wave wave-top"> <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#ff00cc" fill-opacity="0.7"
+        d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,85.3C672,96,768,160,864,186.7C960,213,1056,203,1152,165.3C1248,128,1344,64,1392,32L1440,0L1440,320L0,320Z">
+      </path>
+    </svg> </div>
+  <section class="login-form">
+    <h2>Welcome to LearnX</h2>
+    <form id="authForm"> <input id="loginUser" type="text" placeholder="Username" required autocomplete="username"><br>
+      <input id="loginPass" type="password" placeholder="Password" required autocomplete="current-password"><br> <button
+        type="submit">Login</button>
+      <p id="msg"></p>
+    </form>
+    <p class="note">Don't have an account? <a href="register.html">Register</a></p>
+  </section>
+  <div class="wave wave-bottom"> <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path fill="#3333ff" fill-opacity="0.8"
+        d="M0,160L60,176C120,192,240,224,360,240C480,256,600,256,720,250.7C840,245,960,235,1080,202.7C1200,171,1320,117,1380,90.7L1440,64L1440,320L0,320Z">
+      </path>
+    </svg> </div>
+  <script src="JS/auth.js"></script>
+  <script> document.getElementById("authForm").addEventListener("submit", (e) => { e.preventDefault(); const u = document.getElementById('loginUser').value.trim(); const p = document.getElementById('loginPass').value; const res = loginUser(u, p); const msg = document.getElementById('msg'); if (!res.ok) { msg.textContent = res.error; return; } msg.textContent = '✅ Welcome, ' + u + '! Redirecting...'; setTimeout(() => location.href = 'index.html', 600); }); </script>
+</body>
+
+</html>
