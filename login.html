@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - LearnX</title>
+  <title>Login - VetriLearnX</title>
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
-  <header class="navbar"> <a href="index.html" class="logo">📘 LearnX</a>
+  <header class="navbar"> <a href="index.html" class="logo">📘 VetriLearnX</a>
     <div class="user-pill" id="userPill"></div> <a href="register.html" class="nav-link"
       id="loginLink">Register</a> <button id="logoutBtn" class="nav-link" style="display:none">Logout</button>
   </header>
@@ -19,7 +19,7 @@
       </path>
     </svg> </div>
   <section class="login-form">
-    <h2>Welcome to LearnX</h2>
+    <h2>Welcome to VetriLearnX</h2>
     <form id="authForm"> <input id="loginUser" type="text" placeholder="Username" required autocomplete="username"><br>
       <input id="loginPass" type="password" placeholder="Password" required autocomplete="current-password"><br> <button
         type="submit">Login</button>
@@ -35,5 +35,6 @@
   <script src="JS/auth.js"></script>
   <script> document.getElementById("authForm").addEventListener("submit", (e) => { e.preventDefault(); const u = document.getElementById('loginUser').value.trim(); const p = document.getElementById('loginPass').value; const res = loginUser(u, p); const msg = document.getElementById('msg'); if (!res.ok) { msg.textContent = res.error; return; } msg.textContent = '✅ Welcome, ' + u + '! Redirecting...'; setTimeout(() => location.href = 'index.html', 600); }); </script>
 </body>
+
 
 </html>
