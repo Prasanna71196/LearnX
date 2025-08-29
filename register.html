@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register - LearnX</title>
+    <title>Register - VetriLearnX</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
-    <header class="navbar"> <a href="index.html" class="logo">📘 LearnX</a>
+    <header class="navbar"> <a href="index.html" class="logo">📘 VetriLearnX</a>
         <div class="user-pill" id="userPill"></div> <a href="login.html" class="nav-link" id="loginLink">Login</a>
         <button id="logoutBtn" class="nav-link" style="display:none">Logout</button>
     </header>
@@ -25,5 +25,6 @@
     <script src="JS/auth.js"></script>
     <script> document.getElementById('regForm').addEventListener('submit', (e) => { e.preventDefault(); const u = document.getElementById('regUser').value.trim(); const p = document.getElementById('regPass').value; const msg = document.getElementById('regMsg'); if (u.length < 3) { msg.textContent = 'Username must be at least 3 characters.'; return; } if (p.length < 6) { msg.textContent = 'Password must be at least 6 characters.'; return; } const res = registerUser(u, p); if (!res.ok) { msg.textContent = res.error; return; } msg.textContent = 'Registered! Redirecting...'; setTimeout(() => location.href = 'index.html', 600); }); </script>
 </body>
+
 
 </html>
